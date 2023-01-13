@@ -18,7 +18,9 @@ function App() {
         itemField={itemField}
         itemComponent={TaskCard}
         items={boardsData}
-        onChange={() => {}}
+        onChange={(message: string) => {
+          console.log(message)
+        }}
       />
     </>
   )

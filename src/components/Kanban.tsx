@@ -22,7 +22,7 @@ interface KanbanProps {
   itemField: string
   itemComponent: React.FC<TaskCardProps>
   items: Task[]
-  onChange: () => void
+  onChange: (message: string) => void
 }
 
 export const Kanban = ({
@@ -30,6 +30,7 @@ export const Kanban = ({
   itemField,
   itemComponent,
   items,
+  onChange,
 }: KanbanProps) => {
   let defaultItems = {}
   for (const key of boards) {
@@ -80,6 +81,7 @@ export const Kanban = ({
         )
       })
     }
+    onChange("Moved")
     setOverBoardId(null)
   }
 
